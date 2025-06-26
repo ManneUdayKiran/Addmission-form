@@ -11,12 +11,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // Serve form
-app.get('/admission', (req, res) => {
+app.get('https://addmission-form.onrender.com/admission', (req, res) => {
 res.sendFile(path.join(__dirname, 'views', 'Addmission-Form.html'));
 });
 
 // Handle form submission
-app.post('/admission', (req, res) => {
+app.post('https://addmission-form.onrender.com/admission', (req, res) => {
   const { name, email, phone, course } = req.body;
   applications.push({ name, email, phone, course });
 
